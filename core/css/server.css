@@ -2399,6 +2399,7 @@ label.infield {
   left: 12px;
   top: 1px;
   bottom: 1px;
+  filter: var(--image-logoheader-custom, invert(100%));
 }
 #header .header-appname-container {
   display: none;
