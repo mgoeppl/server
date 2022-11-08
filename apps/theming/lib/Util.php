@@ -262,7 +262,7 @@ class Util {
 		return $backgroundLogo !== '' && $backgroundLogo !== 'backgroundColor';
 	}
 
-	public function isLogoThemed() {
+	public function isLogoThemed(): bool {
 		return $this->imageManager->hasImage('logo')
 			|| $this->imageManager->hasImage('logoheader');
 	}
