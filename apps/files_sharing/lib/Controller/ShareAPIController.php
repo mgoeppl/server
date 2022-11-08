@@ -1797,12 +1797,12 @@ class ShareAPIController extends OCSController {
 				$sharedWith = substr($share->getSharedWith(), $shareWithStart, $shareWithLength);
 			}
 			try {
-				$member = \OCA\Circles\Api\v1\Circles::getMember($sharedWith, $userId, 1);
-				if ($member->getLevel() >= 4) {
-					return true;
-				}
-				return false;
-			} catch (QueryException $e) {
+				// checking if user is within said circle
+				// deprecated API, needs to be edited when ICirclesManager is implemented
+				\OCA\Circles\Api\v1\Circles::getMember($sharedWith, $userId, 1);
+
+				return true;
+			} catch (\Exception $e) {
 				return false;
 			}
 		}
